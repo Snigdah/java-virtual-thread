@@ -11,9 +11,9 @@ public class Task {
 
     public static void isIntensive(int i){
         try {
-            log.info("staring I/O task {}", i);
+            log.info("staring I/O task {}. Thread Info : {}", i, Thread.currentThread());
             Thread.sleep(Duration.ofSeconds(10));
-            log.info("ending I/O task {}", i);
+            log.info("ending I/O task {}. Thread Info : {}", i, Thread.currentThread());
         } catch (InterruptedException e) {
             throw new RuntimeException(e);
         }

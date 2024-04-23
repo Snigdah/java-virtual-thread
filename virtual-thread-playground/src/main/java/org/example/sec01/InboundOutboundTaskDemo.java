@@ -4,13 +4,13 @@ import java.util.concurrent.CountDownLatch;
 
 // Create Platform thread
 public class InboundOutboundTaskDemo {
-    private static final int MAX_PLATFORM = 10;
+    private static final int MAX_PLATFORM = 20;
     private static final int MAX_VIRTUAL = 20;
 
 
     public static void main(String[] args) throws InterruptedException {
-      //  platformThreadDemo1();
-         virtualThreadDemo3();
+        platformThreadDemo1();
+         //virtualThreadDemo3();
     }
 
 

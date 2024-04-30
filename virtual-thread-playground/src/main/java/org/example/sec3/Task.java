@@ -8,7 +8,7 @@ public class Task {
     private static final Logger log = LoggerFactory.getLogger(org.example.sec01.Task.class);
 
     public static void cpuIntensive(int i){
-//log.info("starting CPU task. Thread Info: {}", Thread.currentThread());
+       // log.info("starting CPU task. Thread Info: {}", Thread.currentThread());
         var timeTaken = CommonUtils.timer(() -> findFib(i));
        // log.info("ending CPT task. time taken: {} ms", timeTaken);
     }

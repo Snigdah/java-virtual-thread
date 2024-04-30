@@ -8,14 +8,14 @@ import java.util.concurrent.CountDownLatch;
 
 public class CPUTaskDemo {
     private static final Logger log = LoggerFactory.getLogger(org.example.sec01.Task.class);
-   //  private static final int TASK_COUNT = 5;
-     private static final int TASK_COUNT = 3 * Runtime.getRuntime().availableProcessors();
+     private static final int TASK_COUNT = 5;
+   //  private static final int TASK_COUNT = 3 * Runtime.getRuntime().availableProcessors();
 
 
     public static void main(String[] args) {
 //        System.out.println(
-//               // Task.findFib(48)
-//              //  CommonUtils.timer(() -> Task.findFib(48))
+//                //Task.findFib(80)
+//               //CommonUtils.timer(() -> Task.findFib(48))
 //        );
 
 
@@ -29,7 +29,7 @@ public class CPUTaskDemo {
         }
 
        // demo(Thread.ofPlatform());
-       //  demo(Thread.ofVirtual());
+      //   demo(Thread.ofVirtual());
 
     }
 

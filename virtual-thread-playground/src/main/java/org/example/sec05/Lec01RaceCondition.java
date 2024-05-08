@@ -15,7 +15,7 @@ public class Lec01RaceCondition {
     public static void main(String[] args) {
 
         demo(Thread.ofVirtual());
-       // demo(Thread.ofPlatform());
+        //demo(Thread.ofPlatform());
 
         CommonUtils.sleep(Duration.ofSeconds(2));
 
@@ -23,7 +23,7 @@ public class Lec01RaceCondition {
     }
 
     private static void demo(Thread.Builder builder){
-        for (int i = 0; i < 50; i++ ){
+        for (int i = 0; i < 500; i++ ){
             builder.start(() -> {
                 log.info("Task started. {}", Thread.currentThread());
                 for (int j = 0; j < 200; j++) {

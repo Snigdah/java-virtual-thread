@@ -14,7 +14,7 @@ public class Lec02Synchronization {
 
     public static void main(String[] args) {
 
-        //demo(Thread.ofVirtual());
+        demo(Thread.ofVirtual());
         //demo(Thread.ofPlatform());
 
         CommonUtils.sleep(Duration.ofSeconds(2));

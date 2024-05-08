@@ -13,15 +13,15 @@ public class Lec03SynchronizationWithIO {
     private static final List<Integer> list = new ArrayList<>();
 
     // Check Pinned thread issue
-//    static {
-//        System.setProperty("jdk.tracePinnedThreads", "full");
-//    }
+    static {
+        System.setProperty("jdk.tracePinnedThreads", "full");
+    }
 
     public static void main(String[] args) {
 
         Runnable runnable = () -> log.info("*** Test Message ***");
 
-        demo(Thread.ofVirtual());
+       demo(Thread.ofVirtual());
         Thread.ofVirtual().start(runnable);
 
 //        demo(Thread.ofPlatform());

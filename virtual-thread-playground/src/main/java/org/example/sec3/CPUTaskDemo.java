@@ -19,17 +19,17 @@ public class CPUTaskDemo {
 //        );
 
 
-        log.info("Task count: {}", TASK_COUNT);
-        for (int i = 1; i <= 3; i++){
-            var totallTimeTaken = CommonUtils.timer(() -> demo(Thread.ofVirtual()));
-            log.info("Total time taken withg virtual {} ms", totallTimeTaken);
-
-            totallTimeTaken = CommonUtils.timer(() -> demo(Thread.ofPlatform()));
-            log.info("Total time taken withg Platform {} ms", totallTimeTaken);
-        }
+//        log.info("Task count: {}", TASK_COUNT);
+//        for (int i = 1; i <= 3; i++){
+//            var totallTimeTaken = CommonUtils.timer(() -> demo(Thread.ofVirtual()));
+//            log.info("Total time taken withg virtual {} ms", totallTimeTaken);
+//
+//            totallTimeTaken = CommonUtils.timer(() -> demo(Thread.ofPlatform()));
+//            log.info("Total time taken withg Platform {} ms", totallTimeTaken);
+//        }
 
        // demo(Thread.ofPlatform());
-      //   demo(Thread.ofVirtual());
+       //  demo(Thread.ofVirtual());
 
     }
 

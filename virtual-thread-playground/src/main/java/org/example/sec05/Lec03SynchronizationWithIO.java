@@ -9,31 +9,40 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Lec03SynchronizationWithIO {
-    private static final Logger log = LoggerFactory.getLogger(org.example.sec01.Task.class);
+    private static final Logger log = LoggerFactory.getLogger(Lec03SynchronizationWithIO.class);
     private static final List<Integer> list = new ArrayList<>();
+
+    // Check Pinned thread issue
+//    static {
+//        System.setProperty("jdk.tracePinnedThreads", "full");
+//    }
 
     public static void main(String[] args) {
 
-        //demo(Thread.ofVirtual());
-        //demo(Thread.ofPlatform());
+        Runnable runnable = () -> log.info("*** Test Message ***");
 
-        CommonUtils.sleep(Duration.ofSeconds(2));
+        demo(Thread.ofVirtual());
+        Thread.ofVirtual().start(runnable);
 
-        log.info("list size: {}", list.size());
+//        demo(Thread.ofPlatform());
+//        Thread.ofPlatform().start(runnable);
+
+        CommonUtils.sleep(Duration.ofSeconds(15));
+
+
     }
 
     private static void demo(Thread.Builder builder){
         for (int i = 0; i < 50; i++ ){
             builder.start(() -> {
                 log.info("Task started. {}", Thread.currentThread());
-                for (int j = 0; j < 200; j++) {
-                    //inMemoryTask();
-                }
+                ioTask();
                 log.info("Task ended. {}", Thread.currentThread());
             });
         }
     }
 
+    // Remove synchronized when run VT
     private static synchronized void ioTask(){
         list.add(1);
         CommonUtils.sleep(Duration.ofSeconds(10));
